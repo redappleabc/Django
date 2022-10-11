@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    Project(Employee) Management<br>
+
+    <p>
+        {% if msg %}
+            {{ msg | safe }}
+        {% endif %}
+    </p>
+
+    {% if table_header|length > 0 %}
+        Employee Working Time of {{date}}
+        <table width = "50%" border="1px">
+            <thead>
+                <th>projects\employee</th>
+                {% for user_id in table_header%}
+                    <th>{{user_id}}</th>
+                {% endfor %}
+            </thead>
+            <tbody>
+                {% for row in table_data%}
+                    <tr>
+                        {% for column in row %}
+                            <td>{{column}}</td>
+                        {% endfor %}
+                    </tr>
+                {%endfor%}
+            </tbody>
+            
+        </table>
+    {%else%}
+        No Data
+    {%endif%}
+    <br>
+   
+    <input type="text" id = "date" value="{{date}}">
+    <input type="button" value = "look" onclick="lookEmployeeWorking()">
+
+</body>
+<script>
+    function lookEmployeeWorking(){
+        window.location.href = "?date=" + document.getElementById("date").value
+    }
+</script>
+</html>
