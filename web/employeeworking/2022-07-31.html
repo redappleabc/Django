@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    Project(Employee) Management<br>
+
+    <p>
+        
+    </p>
+
+    
+        Employee Working Time of 2022-07-31
+        <table width = "50%" border="1px">
+            <thead>
+                <th>projects\employee</th>
+                
+                    <th>Maximilian(1928580)</th>
+                
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        
+                            <td>hubstaff bot295(2097986)</td>
+                        
+                            <td>8:14:17</td>
+                        
+                    </tr>
+                
+            </tbody>
+            
+        </table>
+    
+    <br>
+   
+    <input type="text" id = "date" value="2022-07-31">
+    <input type="button" value = "look" onclick="lookEmployeeWorking()">
+
+</body>
+<script>
+    function lookEmployeeWorking(){
+        window.location.href = "?date=" + document.getElementById("date").value
+    }
+</script>
+</html>
